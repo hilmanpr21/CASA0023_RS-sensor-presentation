@@ -17,6 +17,17 @@ class: inverse center middle
 options(htmltools.dir.version = FALSE)
 ```
 
+```{r echo=FALSE, warning=FALSE, error=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           style = "markdown",
+           hyperlink = TRUE,
+           dashed = FALSE)
+           no.print.fields=c("doi", "url", "urldate", "issn")
+myBib <- ReadBib("Week_02 Learning Diary.bib", check = FALSE)
+```
 
 ```{r xaringan-all, echo=FALSE}
 library(countdown)
@@ -170,7 +181,7 @@ class: inverse center middle
 
 ## Application 01 - Fire Phase Detector
 
-- VIIRS on suomi NPP satellite are sensitive to visible light from flaming fires (**citation: Detecting**) which allows  to differentiate phase of wild fire, such as flaming or smoldering. This is beneficial for peatland that is prone to fire combustion
+- VIIRS on suomi NPP satellite are sensitive to visible light from flaming fires `r Citet(myBib,"DefenseMeteorologicalSatellite2023")` which allows  to differentiate phase of wild fire, such as flaming or smoldering. This is beneficial for peatland that is prone to fire combustion
 
 - (**Citation**) detects fire burning phase using VIIRS DNB and M-band to calculate visible energy fraction (VEF) as indicator of fire combustion phase.
 
