@@ -11,6 +11,33 @@ output:
       countIncrementalSlides: false
 ---
 
+class: inverse center middle
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+```{r xaringan-all, echo=FALSE}
+library(countdown)
+library(xaringan)
+library(xaringanExtra)
+library(knitr)
+hook_source <- knitr::knit_hooks$get('source')
+knitr::knit_hooks$set(source = function(x, options) {
+  x <- stringr::str_replace(x, "^[[:blank:]]?([^*].+?)[[:blank:]]*#<<[[:blank:]]*$", "*\\1")
+  hook_source(x, options)
+})
+xaringanExtra::use_tile_view()
+xaringanExtra::use_broadcast()
+xaringanExtra::use_panelset()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_search(show_icon = TRUE, auto_search = FALSE)
+xaringanExtra::use_progress_bar(color = "#FFC94A", location = "bottom")
+```
+
+# What is Suomi NPP?
+
 ---
 # What is Suomi NPP?
 
